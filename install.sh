@@ -28,7 +28,7 @@ check_var() {
   declare var_value=${!var_name}  
 
   if [[ -z "$var_value" ]]; then
-    echo "Ошибка! Не присвоено значение переменной $var_name в файле $SET_FILE или аргумент у флага"
+    echo "Ошибка! Не присвоено значение переменной $var_name в файле $SET_FILE или аргументу флага"
     exit 1
   else
     echo "$var_value"
