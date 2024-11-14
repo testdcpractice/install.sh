@@ -23,9 +23,9 @@ function help() {
 
 #Функция, которая проверяет, переданы ли в скрипт значения переменных.
 check_var() {
-  local var_name=$1
+  declare var_name=$1
   # Получение значения переменной по её имени
-  local var_value=${!var_name}  
+  declare var_value=${!var_name}  
 
   if [[ -z "$var_value" ]]; then
     echo "Ошибка! Не присвоено значение переменной $var_name в файле $SET_FILE или аргументу флага"
@@ -147,7 +147,7 @@ check_var "FILE_PATH"
 check_var "WORK_DIR"
 
 #Проверяем,является ли $FILE_PATH архивом
-unzip -z $FILE_PATH > /dev/null
+unzip -z $FILE_PATH > &> /dev/null
 if [ $? -eq 0 ]; then
   #Создаём директорию развёртывания
   create_install_dir
