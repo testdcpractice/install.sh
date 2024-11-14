@@ -147,7 +147,7 @@ check_var "FILE_PATH"
 check_var "WORK_DIR"
 
 #Проверяем,является ли $FILE_PATH архивом
-unzip -z $FILE_PATH > &> /dev/null
+unzip -z $FILE_PATH &> /dev/null
 if [ $? -eq 0 ]; then
   #Создаём директорию развёртывания
   create_install_dir
